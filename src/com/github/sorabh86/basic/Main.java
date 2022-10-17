@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+	
+	static String name ="sorabh";
+	
+	void display() {
+		System.out.println("Main: "+name);
+	}
 
 	public static void main(String[] args) {
 		int val = 39;
@@ -16,7 +22,11 @@ public class Main {
 		
 		items.forEach(i->System.out.println(i));
 
-		
+		// calling static variable
+		Main m = new Main();
+		System.out.println(Main.name);
+		Main.name = "Neeraj";
+		m.display();
 		
 	}
 }
