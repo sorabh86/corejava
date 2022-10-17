@@ -35,7 +35,7 @@ Set of Practise Programs of most commonly known.
 [see list here](Programs.md)
 
 #### More Algorithm Programs
-[see list here](AlgoPrograms.md)
+[see list here](AlgoProgram.md)
 
 
 
