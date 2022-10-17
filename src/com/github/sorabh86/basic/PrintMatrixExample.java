@@ -124,8 +124,8 @@ public class PrintMatrixExample {
 			
 			for(y=0; y<2; y++) {
 				res[x][y] += mat1[x][y] + mat2[x][y];
-				s1 += mat1[x][y]+' ';
-				s2 += mat2[x][y]+' ';
+				s1 += mat1[x][y]+" ";
+				s2 += mat2[x][y]+" ";
 				s3 += res[x][y]+' ';
 //				mat1Str += mat1[x][y]+",";
 //				mat2Str += mat2[x][y]+",";
