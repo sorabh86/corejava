@@ -20,6 +20,7 @@ public class PrintMatrixExample {
 		System.out.println("1. Print Matrix");
 		System.out.println("2. Add Matrices");
 		System.out.println("3. Substract Matrices");
+		System.out.println("3. Matrices Multiplication");
 		System.out.println("0. Exit Program");
 		
 		try {
@@ -29,6 +30,8 @@ public class PrintMatrixExample {
 				case "2": addMatrix();
 					break;
 				case "3": substractMatrix();
+					break;
+				case "4": multiplyMatrix();
 					break;
 				case "0": exitProgram("Closed");
 					break;
@@ -100,7 +103,7 @@ public class PrintMatrixExample {
 		int mat2[][] = new int[2][2];
 		int res[][] = new int[2][2];
 		
-		int x,y,n;
+		int x,y;
 		
 		System.out.println("Please Enter First Matrix");
 		mat1 = inputMatrix();
@@ -109,39 +112,18 @@ public class PrintMatrixExample {
 		mat2 = inputMatrix();
 		
 		// calculate Matrix addition
-		System.out.println("Result:");
-		String result="";
-//		String mat1Str = "[";
-//		String mat2Str = "[";
-//		String resStr = "[";
-		for(x=0; x<2; x++) {
-//			mat1Str += "(";
-//			mat2Str += "(";
-//			resStr += "(";
-			String s1 = "| ";
-			String s2 = "| ";
-			String s3 = "| ";
-			
-			for(y=0; y<2; y++) {
-				res[x][y] += mat1[x][y] + mat2[x][y];
-				s1 += mat1[x][y]+" ";
-				s2 += mat2[x][y]+" ";
-				s3 += res[x][y]+' ';
-//				mat1Str += mat1[x][y]+",";
-//				mat2Str += mat2[x][y]+",";
-//				resStr += res[x][y]+",";
-			}
-			result += s1 +" | + " +s2 + " | = "+s3+" |\n";
-//			mat1Str += ")";
-//			mat2Str += ")";
-//			resStr += ")";
-		}
-//		mat1Str += "]";
-//		mat2Str += "]";
-//		resStr += "]";
+		for(x=0; x<2; x++)
+			for(y=0; y<2; y++)
+				res[x][y] = mat1[x][y] + mat2[x][y];
 		
-//		System.out.println(mat1Str+" + "+mat2Str+" = "+resStr);
-		System.out.println(result);
+		// print result
+		System.out.println("Matrix Addition Result:");
+		for(x=0; x<2; x++) {
+			System.out.print("{");
+			for(y=0; y<2; y++)
+				System.out.print(res[x][y]+", ");
+			System.out.print("}");
+		}
 		
 		welcomeScreen();
 	}
@@ -152,13 +134,58 @@ public class PrintMatrixExample {
 		int mat2[][] = new int[2][2];
 		int res[][] = new int[2][2];
 		
+		int x,y;
+		
 		System.out.println("Please Enter First Matrix");
 		mat1 = inputMatrix();
 		System.out.println("Please Enter Second Matrix");
 		mat2 = inputMatrix();
 		
 		// calculation
-		System.out.println(mat1.length);
+		for(x=0; x<2; x++)
+			for(y=0; y<2; y++)
+				res[x][y] = mat1[x][y] - mat2[x][y];
+		
+		// print result
+		System.out.println("Matrix Substraction Result:");
+		for(x=0; x<2; x++) {
+			System.out.print("{");
+			for(y=0; y<2; y++)
+				System.out.print(res[x][y]+", ");
+			System.out.print("}");
+		}
+		
+		welcomeScreen();
+	}
+	static void multiplyMatrix() {
+		System.out.println("Running Matrix Multiplication 2x2:");
+		int[][] mat1 = new int[2][2];
+		int mat2[][] = new int[2][2];
+		int res[][] = new int[2][2];
+		
+		int x,y,z;
+		
+		System.out.println("Please Enter First Matrix");
+		mat1 = inputMatrix();
+		System.out.println("Please Enter Second Matrix");
+		mat2 = inputMatrix();
+		
+		// calculation
+		for(x=0; x<mat1.length; x++)
+			for(y=0; y<mat2.length; y++) {
+				
+				for(z=0; z<mat1.length; z++)
+					res[x][y] += mat1[x][y]*mat2[z][y];
+			}
+		
+		// print result
+		System.out.println("Matrix Substraction Result:");
+		for(x=0; x<2; x++) {
+			System.out.print("{");
+			for(y=0; y<2; y++)
+				System.out.print(res[x][y]+", ");
+			System.out.print("}");
+		}
 		
 		welcomeScreen();
 	}

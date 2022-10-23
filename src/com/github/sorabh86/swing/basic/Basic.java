@@ -127,7 +127,7 @@ public class Basic {
 		spinner.setBounds(22, 276, 253, 27);
 		frame.getContentPane().add(spinner);
 		
-		createJList();
+//		createJList();
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(22, 151, 253, 14);

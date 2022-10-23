@@ -4,7 +4,7 @@ public class ClassLoaderExample {
 	
 	public static void main(String[] args) {
 		
-		Class c = ClassLoaderExample.class;
+		Class<ClassLoaderExample> c = ClassLoaderExample.class;
 		System.out.println(c.getClassLoader());
 		
 		System.out.println(String.class.getClassLoader());
