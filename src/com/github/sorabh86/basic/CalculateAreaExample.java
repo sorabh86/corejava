@@ -16,6 +16,7 @@ public class CalculateAreaExample {
 		w = sc.nextDouble();
 		System.out.print("Enter height: ");
 		h = sc.nextDouble();
+		sc.close();
 		
 		double area = (w*h)/2;
 		System.out.println("Area of triangle: "+ area);

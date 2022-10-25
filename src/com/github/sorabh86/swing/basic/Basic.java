@@ -152,6 +152,7 @@ public class Basic {
 		table.setBounds(319, 417, 304, 94);
 	}
 
+	@SuppressWarnings("unused")
 	private void createJList() {
 		String data[] = {"Assumenda","Voluptatibus","Necessitatibus"};
 		
