@@ -10,8 +10,7 @@ public class InputExample {
 		
 		int num1, num2, output;
 		
-		InputStreamReader isr = new InputStreamReader(System.in);
-		BufferedReader br = new BufferedReader(isr);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		try {
 			System.out.println("Enter a Number: ");

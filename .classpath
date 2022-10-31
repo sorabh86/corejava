@@ -6,5 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/___PROGRAMS-PORT/jdk/javafx-sdk-19/lib/javafx.graphics.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
