@@ -24,3 +24,5 @@
 - Decision needs to be made about where child management operations are defined. Defining them on component provides transparency but leaf nodes are forced to implement those methods. Defining them on composite is safer but client needs to be made aware of composite.
 - Overall goal of design should be to make client code easier to implement when using composite. This is possible if client code can work with component interface only and doesn't need to worry about leaf-composite distinction.
 
+### Example
+- Composite is used in many UI frameworks, since it easily allows to represent a tree of UI controls.
