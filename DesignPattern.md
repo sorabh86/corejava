@@ -1,6 +1,3 @@
-<div style="position:relative">
-	<a style="padding:10px;display:inline-block;position:fixed" href="README.md">&lt; back</a>
-</div>
 [<back](README.md)
 
 # Design Patterns
