@@ -1,6 +1,10 @@
 [<back](../DesignPattern.md)
 
 # Composite
+- We have a parent-child or whole-part relation between objects. We can composite pattern to simplify dealing with such object arrangements.
+- Goal of composite pattern is to simplify the client code by allowing it to treat the composites and leaf nodes in same way.
+- Composites will delegate the operations to its children while leaf nodes implement the functionality.
+- You have to decide which methods the base component will define. Adding all methods here will allow client to treat all nodes same. But it may force classes to implement behaviour which they don't have.
 - We have a part-whole relationship or hierarchy of objects and we want to be able to treat all objects in this hierarchy uniformly.
 - This is NOT a simple composition concept from object oriented programming but a further enhancement to that principal.
 - Think of composite pattern when dealing with tree structure of objects.
@@ -26,3 +30,13 @@
 
 ### Example
 - Composite is used in many UI frameworks, since it easily allows to represent a tree of UI controls.
+- In JSF we have UIViewRoot class which acts as composite. Other UIComponent implementations like UIOutput, UIMessage act as leaf nodes.
+
+## Differences Composit & Decorator
+- Composite deals with tree structure of objects. Decorator simply contains another (single) object.
+- In Composite, leaf nodes & composites have same interface and composites simply delegate the operation to children. Decorators add or modify the behaviour of contained object and do not have notion of children.
+
+## Pitfalls
+- Difficult to restrict what is added to hierarchy. If multiple types of leaf nodes are present in system then client code ends up doing runtime checks to ensure the operation is available on a node.
+- Creating the original hierarchy can still be complex implementation especially if you are using caching to reuse nodes and number of nodes are quite high.
+
