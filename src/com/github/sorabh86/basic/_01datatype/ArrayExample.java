@@ -1,8 +1,8 @@
-package com.github.sorabh86.basic;
+package com.github.sorabh86.basic._01datatype;
 
 import java.util.Arrays;
 
-import com.github.sorabh86.basic.utils.ArrayPrint;
+import com.github.sorabh86.basic._03utils.ArrayPrint;
 
 public class ArrayExample {
 

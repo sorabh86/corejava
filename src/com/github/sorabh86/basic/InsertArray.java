@@ -2,7 +2,7 @@ package com.github.sorabh86.basic;
 
 import java.util.Scanner;
 
-import com.github.sorabh86.basic.utils.ArrayPrint;
+import com.github.sorabh86.basic._03utils.ArrayPrint;
 
 public class InsertArray {
 

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/14.0.2">
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
 		<attributes>
-			<attribute name="module" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/___PROGRAMS-PORT/jdk/javafx-sdk-19/lib/javafx.graphics.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="D:/___PROGRAMS-PORT/jdk/libs/commons-lang3-3.12.0/commons-lang3-3.12.0.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="lib" path="D:/___PROGRAMS-PORT/jdk/libs/commons-lang3-3.12.0/commons-lang3-3.12.0-javadoc.jar"/>
+	<classpathentry kind="lib" path="D:/___PROGRAMS-PORT/jdk/libs/commons-lang3-3.12.0/commons-lang3-3.12.0-sources.jar"/>
+	<classpathentry kind="lib" path="D:/___PROGRAMS-PORT/jdk/libs/commons-lang3-3.12.0/commons-lang3-3.12.0-tests.jar"/>
+	<classpathentry kind="lib" path="D:/___PROGRAMS-PORT/jdk/libs/commons-lang3-3.12.0/commons-lang3-3.12.0-test-sources.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

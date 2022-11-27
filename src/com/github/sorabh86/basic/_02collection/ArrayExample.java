@@ -1,4 +1,4 @@
-package com.github.sorabh86.basic.collection;
+package com.github.sorabh86.basic._02collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;

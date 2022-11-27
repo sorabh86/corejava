@@ -1,4 +1,4 @@
-package com.github.sorabh86.basic.utils;
+package com.github.sorabh86.basic._03utils;
 
 public class ArrayPrint {
 	public static void print(String str, int[] x) {

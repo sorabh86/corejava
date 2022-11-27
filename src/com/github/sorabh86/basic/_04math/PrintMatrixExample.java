@@ -1,4 +1,4 @@
-package com.github.sorabh86.basic;
+package com.github.sorabh86.basic._04math;
 
 import java.io.BufferedReader;
 import java.io.IOException;
