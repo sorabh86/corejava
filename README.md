@@ -4,8 +4,10 @@
 
 * [Java Basic Notes](Basic.md)
 * [Basic Programs](Programs.md)
+* [Algorithms & Data Structure](ADS.md)
 * [Algorithm Programs](AlgoProgram.md)
 * [Design Patterns](DesignPattern.md)
+* [Build Tools](BuildTools.md)
 
 This project contains many java most asked interview question with example
 
