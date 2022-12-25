@@ -29,27 +29,24 @@ public class Workflow {
 		builder.append(name).append("]\nBEGIN -> ");
 		for(String step : steps)
 			builder.append(step).append(" -> ");
-		
+		builder.append("END");
 		return builder.toString();
 	}
 
 	public void addStep(String step) {
-		// TODO Auto-generated method stub
-		
+		this.steps.addLast(step);
 	}
 
 	public void removeStep(String step) {
-		// TODO Auto-generated method stub
-		
+		this.steps.remove(step);
 	}
 
 	public String[] getSteps() {
-		// TODO Auto-generated method stub
-		return null;
+		String[] steps = this.steps.stream().toArray(String[]::new);
+		return steps;
 	}
 
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.name;
 	}
 }
