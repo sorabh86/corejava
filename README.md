@@ -1,7 +1,7 @@
 # Core JAVA
 
 ### Index ###
-
+* [Common Java](Common.md)
 * [Java Basic Notes](Basic.md)
 * [Basic Programs](Programs.md)
 * [Algorithms & Data Structure](ADS.md)

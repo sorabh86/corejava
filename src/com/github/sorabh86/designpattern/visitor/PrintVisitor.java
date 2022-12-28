@@ -5,6 +5,7 @@ import com.github.sorabh86.designpattern.visitor.AppraisalVisitor.Ratings;
 // Concrete Visitor
 public class PrintVisitor implements Visitor {
 	
+	@SuppressWarnings("unused")
 	private Ratings ratings;
 	
 	public PrintVisitor() {}

@@ -23,7 +23,7 @@ public class AppraisalVisitor implements Visitor {
 		finalRating.setFinalRating(programmer.getPerformanceRating());
 		
 		ratings.put(programmer.getEmployeeId(), finalRating);
-		System.out.println(programmer.getEmployeeId()+" = "+finalRating);
+//		System.out.println(programmer.getEmployeeId()+" = "+finalRating);
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class AppraisalVisitor implements Visitor {
 		finalRating.setTeamAverageRating(teamAverage);
 		
 		ratings.put(lead.getEmployeeId(), finalRating);
-		System.out.println(lead.getEmployeeId()+" = "+finalRating);
+//		System.out.println(lead.getEmployeeId()+" = "+finalRating);
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class AppraisalVisitor implements Visitor {
 		finalRating.setTeamAverageRating(teamAverage);
 		
 		ratings.put(manager.getEmployeeId(), finalRating);
-		System.out.println(manager.getEmployeeId()+" = "+finalRating);
+//		System.out.println(manager.getEmployeeId()+" = "+finalRating);
 	}
 
 	@Override
@@ -65,11 +65,13 @@ public class AppraisalVisitor implements Visitor {
 		finalRating.setTeamAverageRating(teamAverage);
 		
 		ratings.put(vp.getEmployeeId(), finalRating);
-		System.out.println(vp.getEmployeeId()+" = "+finalRating);
+//		System.out.println(vp.getEmployeeId()+" = "+finalRating);
 	}
 	
 	private int getTeamAverage(Employee emp) {
-		return (int)Math.round(emp.getDirectReports().stream().mapToDouble(e->e.getPerformanceRating()).average().getAsDouble());
+		return (int)Math.round(emp.getDirectReports().stream()
+				.mapToDouble(e->e.getPerformanceRating())
+				.average().getAsDouble());
 	}
 
 	public Ratings getFinalRatings() {

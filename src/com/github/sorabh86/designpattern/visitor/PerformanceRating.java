@@ -2,30 +2,27 @@ package com.github.sorabh86.designpattern.visitor;
 
 public class PerformanceRating {
 	
-	private int employeeId;
-	private int performanceRating;
+	private int id;
+	private int personalRating;
+	private int teamAverageRating;
+	private int finalRating;
 
-	public PerformanceRating(int employeeId, int performanceRating) {
-		this.employeeId = employeeId;
-		this.performanceRating = performanceRating;
+	public PerformanceRating(int id, int personalRating) {
+		this.id = id;
+		this.personalRating = personalRating;
+	}
+	
+	public int getId() {return id;}
+	public int getPersonalRating() {return personalRating;}
+	public int getTeamAverageRating() {return teamAverageRating;}
+	public int getFinalRating() {return finalRating;}
+
+	public void setFinalRating(int finalRating) {
+		this.finalRating = finalRating;
 	}
 
-	public void setFinalRating(int performanceRating) {
-		this.performanceRating = performanceRating;
-	}
-
-	public int getFinalRating() {
-		return performanceRating;
-	}
-
-	public void setTeamAverageRating(int teamAverage) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public String toString() {
-		return "PerformanceRating [employeeId=" + employeeId + ", performanceRating=" + performanceRating + "]";
+	public void setTeamAverageRating(int teamAverageRating) {
+		this.teamAverageRating =teamAverageRating;
 	}
 
 }
