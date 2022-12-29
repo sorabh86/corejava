@@ -16,6 +16,8 @@ import javax.swing.border.EmptyBorder;
 
 @SuppressWarnings("serial")
 public class HeightConverter extends JFrame {
+	
+	private final double INCH2CENTIMETER = 2.54;
 
 	private JPanel contentPane;
 	private JTextField ftTxtField;
@@ -84,7 +86,7 @@ public class HeightConverter extends JFrame {
 					feet=Double.parseDouble(ftTxtField.getText());
 					inches=Double.parseDouble(inTxtField.getText());
 					
-					centimetres = (feet*12+inches) * 2.54;
+					centimetres = (feet*12+inches) * INCH2CENTIMETER;
 					cmTxtField.setText(String.valueOf(centimetres));
 				} catch(Exception exc) {
 					System.out.println("Empty Field");

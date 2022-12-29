@@ -35,4 +35,19 @@
 13. **Greater than or equal**: (>=) Checks if value is greater or equal.
 14. **Less than or equal**: (<=) Checks if value is less or equal.
 
+## Java.io package
+Provides a set of input and output streams to read and write data.
+## Java.lang package
+Provided basic functionality used by most applications.
+## ParseInt Method
+Parses the string character into decimal integer.
+## Math.PI
+Ratio of circumference of a circle to it's diameter: approx. 3.14159
+
+## Alt Code for Mathematical Symbols
+* **Division**: Alt + 0247
+* **Multiplication**: alt + 0215
+* **Minus**: alt + 45
+* **Plus**: alt + 43
+
 

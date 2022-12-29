@@ -70,7 +70,14 @@ public class WordCountTool extends JFrame {
 		JButton countBtn = new JButton("Count your words");
 		countBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				String sentence = wordTextArea.getText();
+				int wordLength = 1;
+				for(int i=0; i<sentence.length(); i++) {
+					if(sentence.charAt(i)==' ') {						
+						wordLength++;
+					}
+				}
+				totalWordTextField.setText(String.valueOf(wordLength));
 			}
 		});
 		countBtn.setFont(new Font("Verdana", Font.BOLD, 14));
