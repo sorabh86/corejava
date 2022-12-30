@@ -5,9 +5,10 @@
 1. **Java language**: (java.lang) Contains core classes for java language.
 2. **Java I/O**: (java.io) Provides a set of input & output streams.
 3. **Java Utility**: (java.util) Collection of utility classes e.g. for calendar, dates.
-4. **AWT**: Provide GUI elements like buttons, text items.
-5. **AWT Image**: Contains classes and interfaces for managing images.
-6. **Swing**: Provides classes for GUI e.g. checkboxes, buttons, etc.
+4. **AWT**: Provide GUI elements like buttons, text items. Java.awt package stand 
+5. **AWT Image**: Contains classes and interfaces for managing images. 
+6. **Swing**: Provides classes for GUI e.g. checkbox, buttons, etc. Javax.swing package stand for Java Standard Extensions.
+7. **Thread**: Java.lang.thread class. Master and child process.
 
 # Primitive Data type
 1. **byte**: Stores integers from -128 to 127. Uses 1 byte of storage space. default=0.
