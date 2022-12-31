@@ -47,3 +47,68 @@
 2. Unbreakable, Sequential Task
 3. Partially Parallelizable, Partially Sequential
 
+## Thread Pooling
+* Implement a thread pool is not trivial
+* JDK comes with a few implementations of thread pool.
+* Fixed Thread Pool executor
+	```
+	int numberOfThread = 6;
+	Executor executor = Executors.newFixedThreadPool(numberOfThread);
+	Runnable task = ...;
+	executor.execute(task);
+	```
+
+### HTTP server
+com.github.sorabh86.threads.server
+
+### Measure throughput using Apache Jmeter
+* Java performance automation tool
+* Does not require writing any code
+
+#### Process
+1. start application `java -jar .\ApacheJMeter.jar`
+2. rename and save testplan.jmx
+3. Right click on plan, add->Threads->ThreadGroup, set number of threads to 200.
+4. right click on thread group, add->Logic Controller->While Controller
+5. right click on While Controller, add->Config Element-> CSV Data Set Config, and browse the file.
+6. right click on While Controller, add->Sampler->HTTP Request, set protocol, IP, port, request method, context url & params.
+7. right click on While Controller, add->Listener->Summary Report.
+8. right click on While Controller, add->Listener->View Result Tree.
+9. Run test plans with different numbers of threads pool sizes.
+
+### Performance measurement and analysis
+Best performance will be near when number of cores = number of threads. Increase of number of thread after that will have almost constant with no improvements.
+
+## Data Sharing between Threads
+1. **Stack Memory Region**: Stack is a memory region where methods are executed, arguments are passed, local variables are stored.    
+Stack + Instruction Pointer = State of each thread's execution 
+	* All variables belong to the thread executing on that stack.
+	* Statically allocated when the thread is created.
+	* The stack's size is fixed, and relatively small(platform specific)
+	* If our calling hierarchy is too deep. We may get an StackOverflow Exception. (Risky with recursive calls)
+2. **Heap Memory Region**: Heap is a shared memory region, where Objects(anything created with the new operator) e.g. String, Object, Collection, etc, Members of classes, Static variables. Heap is manage and Governed by Garbage Collector. Objects - stay as long as we have a reference to them. Members of classes exist as long as their parent objects exist(same life cycle as their parents). Static variables stay forever.
+
+### Difference between References & Objects
+References can be allocated on the stack or ont the heap if they are members of a class. but Objects are always allocated on the heap.
+* Heap(shared): Objects, Class methods, Static variables.
+* Stack(exclusive): Local primitive types, Local references.
+
+### Resource Sharing
+Resource in terms of computer programming is something that represent data or state. These can be
+* Variables (integers, string, ...)
+* Data structure (array, collections, maps, ...)
+* File or connection handles (connections to file or databases, ...)
+* Message or work queues
+* Any Object we create ...
+
+### Atomic Operation
+* An operation or a set of operations is considered atomic, if it appears to the rest of the system as if it occurred at once.
+* Single step - "all or nothing"
+* No intermediate states
+
+
+
+
+
+
+
