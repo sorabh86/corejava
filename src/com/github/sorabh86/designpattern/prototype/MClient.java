@@ -13,7 +13,6 @@ public class MClient {
 			Swordsman sm2 = (Swordsman)sm1.clone();
 			System.out.println("Cloned: "+sm2);
 		} catch (CloneNotSupportedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -102,11 +102,55 @@ Resource in terms of computer programming is something that represent data or st
 * Any Object we create ...
 
 ### Atomic Operation
+* Operations those are thread safe.
 * An operation or a set of operations is considered atomic, if it appears to the rest of the system as if it occurred at once.
 * Single step - "all or nothing"
 * No intermediate states
+* All reference assignments are atomic. We can get and set references to objects automatically.
+* All assignments to primitive types are safe `except long and double`, that means reading from, and writing to the following types i.e. int, short, byte, float, char, boolean. long and double are 64bit data type, java didn't guareenty accessing them in single operation, sometimes reading it will happend in 2 different lower and uper 32bits operations.
+* **volatile**: Assignment to long and double if declared volatile i.e. `volatile double x = 1.0; //atomic`
+* Classes java.util.concurrent.atomic are more advanced operations, those classes are performing non-atomic operations atomically using some techniques and tricks.	
+* **Metrics Aggrigation**
 
+## Concurrency
+* **Synchroized**: Locking resources: two ways we can lock by using synchronized keyword or synchronized block. Synchronized block is called `Reentrant`. A thread cannot prevent itself from entering a critical section means a thread in the synchroized block can access another synchroized block, but other thread are locked to enter.
 
+### Race Condition
+When multiple threads are accessing a shared resources. At least one thread is modifying the resource, the timing of threads scheduling may cause incorrect results. The core of the problem is non atomic operations performed on the shared resource.
+
+**Solution**: Identification of the critical section where the race condition is happening, then protect critical section by a synchronized block.
+
+### Data Race
+* Compiler and CPU may execute the instructions Out of Order to optimize performance and utilization.
+* They will do so while maintaining the logical correctness of the code.
+* Out of Order execution by the compiler and CPU are important features to speed up the code.
+* The compiler re-arranges instructions for better
+	* Branch predication (optimized loops, if statements, etc.)
+	* Vectorization: Parallel instruction execution (SIMD)
+	* Prefetching instructions: better cache performance.
+* CPU re-arranges instructions for better hardware units utilization.
+
+**Solution**: Java do not guareenty semantics executed by differnt threads running concurrently. There are two methods
+	* Synchronization of methods which modify shared variables.
+	* Declaration of shared variables with the volatile keyword.
+
+## Locking Strategy
+* `Fine-Grained Locking`: Locking individual resource.
+* `Coarse-Grained Locking`: Looking every resources.
+
+### Deadlock
+In Fine-Grained Locking this problem occurred.
+* Mutual Exclusion: Only one thread can have exclusive access to a resource.
+* Hold and Wait: At least one thread is holding a resource and is waiting for another resource.
+* Non-preemptive allocation: A resource is released only after the thread is done using it.
+* Circular wait: A chain of at least two threads each one is holding one resource and waiting for another resource.
+
+**Solution**: Avoid Circular wait: Enforce a strict order in lock acquisition. Enforcing a strict order on lock acquisition prevents deadlocks. Easy to do with a small number of locks. 
+
+Maybe hard to accomplish if there are many locks in different places. You can use other techniques:
+* Deadlock detection: Watchdog
+* Thread interruption(not possible with synchronized)
+* tryLock operations(not possible with synchronized)
 
 
 
