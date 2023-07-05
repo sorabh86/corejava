@@ -152,7 +152,26 @@ Maybe hard to accomplish if there are many locks in different places. You can us
 * Thread interruption(not possible with synchronized)
 * tryLock operations(not possible with synchronized)
 
+## Locking
+* java.util.concurrent.locks.ReentrantLock
+	* It works just like the synchronized keyword applied on an object.
+	* It requires explicit locking and unlocking.
+	* If deadlock happened. **Solution**: Surround your code in try and unlock object in finally block.
+* ReentrantLock.lockInterruptibly()
+	* This is very useful if we implement `watchdog` for deadlock detection and recovery.
+	* Waking up threads to do clean and close the application.
+* ReentrantLock.tryLock()
+	* `boolean tryLock(long timeout, TimeUnit unit)`
+		* return true and acquires a lock if available.
+		* return false and does not get suspended, if the lock is unavailable.
+	* Under no circumstance does the tryLock() method block.
+	* Regardless of the state of the lock, it always returns immediately.
+	* Real Time applications where suspending a thread on a lock() method is unacceptable.
+* ReentrantReadWriteLock
+	* Synchronized and ReentrantLock do not allow multiple readers to access a shared resource concurrently.
+	* Not a big problem in the general case.
+	* If we keep the critical sections short, the chances of a contention over a lock are minimal.
+	* Use it when read operations are predominant, or the read operation are not as fast for read from many variable, read from a complex data structure.
 
-
-
+## Semaphore
 

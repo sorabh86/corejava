@@ -1,6 +1,6 @@
-package com.github.sorabh86.threads;
+package com.github.sorabh86.threads.create;
 
-public class CreateThread {
+public class RunnableThread {
 	public static void main(String[] args) throws InterruptedException {
 		
 		Thread thread = new Thread(new Runnable() {	
